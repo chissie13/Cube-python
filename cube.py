@@ -16,17 +16,30 @@ y_mid = 250
 #l.addLine((250, 250), (275, 225))
 #l.addLine((250, 200), (275, 225))
 #l.addLine((250, 200), (225, 225))
+base=250
+basex=275
+basey=225
+v0 = [-50,-50,-50]         #
+v1 = [50,-50,-50]          #
+v2 = [50,50,-50]           #
+v3 = [-50,50,-50]          #
+v4 = [-50,-50,50]          #
+v5 = [50,-50,50]           #
+v6 = [50,50,50]            #
+v7 = [-50,50,50]           #
+cube=[v0,v1,v2,v3,v4,v5,v6,v7]
 
-v1 = [-1,-1,-1]
-v2 = [1,-1,-1]
-v3 = [1,1,-1]
-v4 = [-1,1,-1]
-v5 = [-1,-1,1]
-v6 = [1,-1,1]
-v7 = [1,1,1]
-v8 = [-1,1,1]
-cube=[v1,v2,v3,v4,v5,v6,v7,v8]
+#front
+l.addLine(((base+cube[0][0]),(base+cube[0][1])),((base+cube[1][0]),(base+cube[1][1])))
+l.addLine(((base+cube[1][0]),(base+cube[1][1])),((base+cube[2][0]),(base+cube[2][1])))
+l.addLine(((base+cube[2][0]),(base+cube[2][1])),((base+cube[3][0]),(base+cube[3][1])))
+l.addLine(((base+cube[3][0]),(base+cube[3][1])),((base+cube[4][0]),(base+cube[4][1])))
 
+#back
+l.addLine(((basex+cube[4][0]),(basey+cube[4][1])),((basex+cube[5][0]),(basey+cube[5][1])))
+l.addLine(((basex+cube[5][0]),(basey+cube[5][1])),((basex+cube[6][0]),(basey+cube[6][1])))
+l.addLine(((basex+cube[6][0]),(basey+cube[6][1])),((basex+cube[7][0]),(basey+cube[7][1])))
+l.addLine(((basex+cube[7][0]),(basey+cube[7][1])),((basex+cube[8][0]),(basey+cube[8][1])))
 
 def vec_tra(vx1, vy1, vx2, vy2):
     return ((vx1+vx2), (vy1+vy2))
